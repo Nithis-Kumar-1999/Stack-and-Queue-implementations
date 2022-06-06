@@ -41,7 +41,7 @@ public class Queues<T> {
 		}
 	}
 	public int length() {
-		return(size);
+		return size;
 	}
 	public String display() {
 	QueueElement<T> temp=front;
