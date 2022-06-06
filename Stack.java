@@ -35,10 +35,11 @@ public class Stack<T> {
 		return(size);
 	}
 	public String display() {
+		StackElement <T> oldTop=top;
 		String str="";
-		while(top!=null) {
-		str+=top.value;
-		top=top.next;
+		while(oldTop!=null) {
+		str+=oldTop.value;
+		oldTop=oldTop.next;
 		}
 		return str;
 	}
