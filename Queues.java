@@ -44,10 +44,11 @@ public class Queues<T> {
 		return(size);
 	}
 	public String display() {
+	QueueElement<T> temp=front;
 	String str="";
-	while(front!=null) {
-	str+=front.value;
-	front=front.next;
+	while(temp!=null) {
+	str+=temp.value;
+	temp=temp.next;
 	}
 	return str;
 	}
