@@ -32,7 +32,7 @@ public class Stack<T> {
 		}
 	}
 	public int length() {
-		return(size);
+		return size;
 	}
 	public String display() {
 		StackElement <T> oldTop=top;
