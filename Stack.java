@@ -1,16 +1,16 @@
 package com.StackQueue;
 import java.util.Scanner;
 
-public class Stack<T> {
+public class Stack<T> {	
+	StackElement<T> top;
 	int size;
-	StackElement<T>top;
 	public Stack() {
 		this.size=0;
 	}
 	public void push(T newValue) {
-		StackElement<T>newElement=new StackElement<T>(newValue);
-		newElement.next=top;	
-		top=newElement;
+		StackElement<T> node=new StackElement<T>(newValue);
+		node.next=top;	
+		top = node;
 		size++;
 	}
 	public T pop() {
@@ -45,8 +45,7 @@ public class Stack<T> {
 	}
 	static Scanner scn=new Scanner(System.in);
 	public static void main(String[] args) {
-		//Stack<Integer>myInt=new Stack<Integer>();
-		Stack<String>mystr=new Stack<String>();
+		Stack<Object>myObj=new Stack<Object>();
 		while(true) {
 			System.out.println("push:1");
 			System.out.println("pop:2");
@@ -57,15 +56,15 @@ public class Stack<T> {
 			System.out.println("Enter the Input");
 			switch(scn.nextInt()){
 			case 1:System.out.println("Enter push element:");
-			mystr.push(scn.next());
+			myObj.push(scn.next());
 			break;
-			case 2:System.out.println("pop element:"+mystr.pop());
+			case 2:System.out.println("pop element:"+myObj.pop());
 			break;
-			case 3:System.out.println("peek element:"+mystr.peek());
+			case 3:System.out.println("peek element:"+myObj.peek());
 			break;
-			case 4:System.out.println("length element:"+mystr.length());
+			case 4:System.out.println("length element:"+myObj.length());
 			break;
-			case 5:System.out.println("display element:"+mystr.display());
+			case 5:System.out.println("display element:"+myObj.display());
 			break;
 			
 			default:System.out.println("Invalid values");
