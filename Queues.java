@@ -8,16 +8,16 @@ public class Queues<T> {
 		this.size=0;
 }
 	public void enqueue(T newValue) {
-		QueueElement<T>newElement=new QueueElement<T>(newValue);
+		QueueElement<T>node=new QueueElement<T>(newValue);
 		if(front==null) {
-		front=newElement;
+		front=node;
 		}
 		else {
 			QueueElement<T> temp=front;
 			while(temp.next!=null) {
 				temp=temp.next;
 			}
-			temp.next=newElement;
+			temp.next=node;
 		}
 	    size++;
 	}
@@ -54,8 +54,7 @@ public class Queues<T> {
 	}
 	static Scanner scn=new Scanner(System.in);
 	public static void main(String[] args) {
-		//Queues<Integer>myInt=new Queues<Integer>();
-		Queues<String>mystr=new Queues<String>();
+		Queues<Object>myObj=new Queues<Object>();
 		while(true) {
 			System.out.println("enqueue:1");
 			System.out.println("dequeue:2");
@@ -66,15 +65,15 @@ public class Queues<T> {
 			System.out.println("Enter the Input");
 			switch(scn.nextInt()) {
 			case 1:System.out.println("Enter enqueue element:");
-			mystr.enqueue(scn.next());
+			myObj.enqueue(scn.next());
 			break;
-			case 2:System.out.println("dequeue element:"+mystr.dequeue());
+			case 2:System.out.println("dequeue element:"+myObj.dequeue());
 			break;
-			case 3:System.out.println("peek element:"+mystr.peek());
+			case 3:System.out.println("peek element:"+myObj.peek());
 			break;
-			case 4:System.out.println("length element:"+mystr.length());
+			case 4:System.out.println("length element:"+myObj.length());
 			break;
-			case 5:System.out.println("display element:"+mystr.display());
+			case 5:System.out.println("display element:"+myObj.display());
 			break;
 			
 			default:System.out.println("Invalid values");
